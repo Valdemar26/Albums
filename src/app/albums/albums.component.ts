@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from "@angular/http";
 
 @Component({
   selector: 'app-albums',
@@ -6,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
+    albums: any[];
 
-  constructor() { }
+    constructor(
+        private http: Http
+    ) {
+        this.http
+            .get('https://jsonplaceholder.typicode.com/albums')
+            .subscribe(
+                (response: Response) => {
+                    this.albums = response.json();
+                },
+                (error: Response) => {
+                    console.log('Error occurred at AlbumsComponent');
+                }
+            )
+    }
 
   ngOnInit() {
   }
