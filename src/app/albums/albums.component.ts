@@ -18,11 +18,13 @@ export class AlbumsComponent implements OnInit {
                 (response: Response) => {
                     this.albums = response.json();
                 },
-                (error: Response) => {
+                (err: Response) => {
+                    this.albums = [];
                     console.log('Error occurred at AlbumsComponent');
                 }
             )
     }
+  //  decide didn't create service.ts, because it's overhead for one get-request
 
   ngOnInit() {
   }
