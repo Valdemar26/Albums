@@ -4,7 +4,7 @@ import { Http, Response } from "@angular/http";
 @Component({
     selector: 'app-photos',
     templateUrl: './photos.component.html',
-    styleUrls: ['./photos.component.css']
+    styleUrls: ['photos.component.scss']
 })
 export class PhotosComponent implements OnInit {
     photos: any[];
