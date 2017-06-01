@@ -17,11 +17,12 @@ export class PhotosComponent implements OnInit {
                 (response: Response) => {
                     this.photos = response.json();
                 },
-                (error: Response) => {
+                (err: Response) => {
                     console.log('Error occurred at PhotosComponent');
                 }
             )
     }
+    //  decide didn't create service.ts, because it's overhead for one get-request
 
     ngOnInit() {
     }
