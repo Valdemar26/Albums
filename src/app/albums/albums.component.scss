@@ -11,5 +11,11 @@
   font-size: 50px;
 }
 p {
-  float: right;
+  margin: 0;
+}
+.align-vertical {
+  display: flex;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
 }

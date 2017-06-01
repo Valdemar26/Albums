@@ -1,20 +1,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <a href="album/:id">
                 <div class="row" *ngFor="let album of albums">
-                    <div class="col-xs-2">
-                        <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-                    </div>
-                    <div class="col-xs-8">
-                        <p class="pull-left">{{ album.userId }}</p>
-                        <p class="pull-right">{{ album.title }}</p>
-                    </div>
-                    <div class="col-xs-2">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    </div>
+                    <a [routerLink]="['albums/', album.id]">
+                        <span class="align-vertical">
+                            <div class="col-xs-3">
+                                <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
+                            </div>
+                            <div class="col-xs-8">
+                                <p class="pull-left">Item list {{ album.userId }}</p>
+                                <!--<p class="pull-right">{{ album.title }}</p>-->
+                            </div>
+                            <div class="col-xs-2">
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            </div>
+                        </span>
+                    </a>
                 </div>
-            </a>
         </div>
     </div>
 </div>
