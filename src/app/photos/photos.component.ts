@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from "@angular/http";
+import { Router, ActivatedRoute, Params } from "@angular/router";
 
 @Component({
     selector: 'app-photos',
@@ -8,8 +9,12 @@ import { Http, Response } from "@angular/http";
 })
 export class PhotosComponent implements OnInit {
     photos: any[];
+    id: number;
+    private sub: any;
+
     constructor(
-        private http: Http
+        private http: Http,
+        private activatedRoute: ActivatedRoute
     ) {
         this.http
             .get('https://jsonplaceholder.typicode.com/photos?albumId=')
@@ -22,9 +27,12 @@ export class PhotosComponent implements OnInit {
                 }
             )
     }
-    //  decide didn't create service.ts, because it's overhead for one get-request
-
     ngOnInit() {
+        // subscribe to router event
+        this.activatedRoute.params.subscribe((params: Params) => {
+            let userId = params['userId'];
+            console.log(userId);
+        });
     }
 
 }
