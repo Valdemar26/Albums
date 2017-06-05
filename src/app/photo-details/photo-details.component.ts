@@ -19,11 +19,13 @@ export class PhotoDetailsComponent implements OnInit {
         public location: Location
     ) {
         this.id = this.route.params.subscribe(params => {
+            //console.log(params['id']);
             this.http
                 .get('https://jsonplaceholder.typicode.com/photos/' +params['id'])
                 .subscribe(
                     (response: Response) => {
                         this.photoDetails = response.json();
+                        //console.log(this.photoDetails);
                     },
                     (err: Response) => {
                         console.log('Error occurred at PhotoDetailsComponent');
