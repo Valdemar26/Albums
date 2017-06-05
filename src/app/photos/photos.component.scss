@@ -1,6 +1,8 @@
 .col-md-4 {
   border: 2px solid deepskyblue;
   border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 //.col-xs-8 {
 //  padding: 50px 0;
@@ -22,6 +24,9 @@ p {
   width: 90%;
   margin: 10px auto;
   border-bottom: solid 2px grey;
+  &:last-child {
+    border: none;
+  }
   .btn-back {
     padding: 0;
     margin: 10px 0;
@@ -32,6 +37,10 @@ p {
     height: 55px;
     justify-content: center;
     align-items: center;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
     .icon-file {
       padding-left: 0;
     }
