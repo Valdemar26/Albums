@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AlbumsComponent } from './albums/albums.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PhotoDetailsComponent } from './photo-details/photo-details.component';
+import {NgxPaginationModule} from '../../node_modules/ngx-pagination';
 
 const routes: Routes = [
     { path: '', component: AlbumsComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        NgxPaginationModule
     ],
     exports: [
         RouterModule

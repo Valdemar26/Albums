@@ -22,9 +22,10 @@
     "@angular/router": "^4.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "ngx-pagination": "^3.0.0",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "zone.js": "^0.8.4"
   },
   "devDependencies": {
     "@angular/cli": "1.0.1",
@@ -47,4 +48,3 @@
     "@types/underscore": "^1.7.33"
   }
 }
-
