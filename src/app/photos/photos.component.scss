@@ -1,0 +1,50 @@
+.col-md-4 {
+  border: 2px solid deepskyblue;
+  border-radius: 5px;
+}
+//.col-xs-8 {
+//  padding: 50px 0;
+//}
+.glyphicon {
+  color: deepskyblue;
+}
+
+.glyphicon-file{
+  font-size: 50px;
+}
+.glyphicon-chevron-right {
+  font-size: 20px;
+}
+p {
+  margin: 0;
+}
+.border_row {
+  width: 90%;
+  margin: 10px auto;
+  border-bottom: solid 2px grey;
+  .photo-align {
+    margin: 0 0 10px 0;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    .icon-file {
+      padding-left: 0;
+    }
+    .cut-title {
+      max-height: 40px;
+      overflow: hidden;
+      //padding-left: 0;
+      .title {
+        width: 100%;
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .arrow-icon {
+      padding: 0 0 0 10px;
+    }
+  }
+}

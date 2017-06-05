@@ -16,9 +16,39 @@
 p {
   margin: 0;
 }
-.align-vertical {
-  display: flex;
-  height: 55px;
-  justify-content: center;
-  align-items: center;
+.border_row {
+  width: 90%;
+  margin: 10px auto;
+  border-bottom: solid 2px grey;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    //background-color: grey;
+    color: black;
+  }
+  .folder-align {
+    margin: 0 0 10px 0;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    .folder-icon {
+      padding-left: 0;
+    }
+    .cut-title {
+      max-height: 40px;
+      overflow: hidden;
+      padding-left: 0;
+      .title {
+        width: 100%;
+        margin: 0 auto;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .arrow-icon {
+      padding: 0 0 0 10px;
+    }
+  }
 }

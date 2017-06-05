@@ -1,12 +1,27 @@
-<div class="row" *ngFor="let photo of photos">
-    <div class="col-xs-2">
-        <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-    </div>
-    <div class="col-xs-8">
-        <p class="pull-left">{{ photo.id }}</p>
-        <p class="pull-right">{{ photo.albumId }}</p>
-    </div>
-    <div class="col-xs-2">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="row border_row">
+                <div class="col-xs-12">
+                    <button class="btn btn-sm btn-primary" (click)="goBack()">Back</button>
+                </div>
+            </div>
+            <div class="border_row row" *ngFor="let photo of photos">
+                <a [routerLink]="['photo/', photo.id]">
+                    <span class="photo-align">
+                        <div class="icon-file col-xs-2">
+                            <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        </div>
+                        <div class="cut-title col-xs-9">
+                            <p class="pull-left">Photo item {{ photo.id }}</p>
+                            <p class="title pull-left">{{ photo.title }}</p>
+                        </div>
+                        <div class="arrow-icon col-xs-1">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </div>
+                    </span>
+                </a>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,20 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from "@angular/http";
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-albums',
-  templateUrl: './albums.component.html',
-  styleUrls: ['albums.component.scss']
+    selector: 'app-albums',
+    templateUrl: './albums.component.html',
+    styleUrls: ['albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
     albums: any[];
-    id: number;
-    private sub: any;
 
     constructor(
-        private http: Http,
-        private route: ActivatedRoute
+        private http: Http
     ) {
         this.http
             .get('https://jsonplaceholder.typicode.com/albums')
@@ -28,14 +24,10 @@ export class AlbumsComponent implements OnInit {
                 }
             )
     }
-  //  decide didn't create service.ts, because it's overhead for one get-request
+    //  decide didn't create service.ts, because it's overhead for one get-request
 
-  ngOnInit() {
-      this.sub = this.route.params.subscribe(params => {
-          this.id = +params['id']; // (+) converts string 'id' to a number
+    ngOnInit() {
 
-          // In a real app: dispatch action to load the details here.
-      });
-  }
+    }
 
 }
