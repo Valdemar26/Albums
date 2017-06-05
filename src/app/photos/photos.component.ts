@@ -1,38 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from "@angular/http";
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
     selector: 'app-photos',
     templateUrl: './photos.component.html',
-    styleUrls: ['photos.component.scss']
+    styleUrls: ['photos.component.scss'],
+    providers: [ Location ]
 })
 export class PhotosComponent implements OnInit {
     photos: any[];
-    id: number;
-    private sub: any;
+    private id: any;
 
     constructor(
         private http: Http,
-        private activatedRoute: ActivatedRoute
+        private route: ActivatedRoute,
+        public location: Location
     ) {
-        this.http
-            .get('https://jsonplaceholder.typicode.com/photos?albumId=')
-            .subscribe(
-                (response: Response) => {
-                    this.photos = response.json();
-                },
-                (err: Response) => {
-                    console.log('Error occurred at PhotosComponent');
-                }
-            )
-    }
-    ngOnInit() {
-        // subscribe to router event
-        this.activatedRoute.params.subscribe((params: Params) => {
-            let userId = params['userId'];
-            console.log(userId);
+        this.id = this.route.params.subscribe(params => {
+            this.http
+                .get('https://jsonplaceholder.typicode.com/photos?albumId=' +params['id'])
+                .subscribe(
+                    (response: Response) => {
+                        this.photos = response.json();
+                    },
+                    (err: Response) => {
+                        console.log('Error occurred at PhotosComponent');
+                    }
+                )
         });
+    };
+    
+    ngOnInit() {
+    }
+
+    goBack(): void {
+        this.location.back();
     }
 
 }
