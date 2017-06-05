@@ -27,7 +27,6 @@ export class AlbumsComponent implements OnInit {
     //  decide didn't create service.ts, because it's overhead for one get-request
 
     ngOnInit() {
-
     }
 
 }

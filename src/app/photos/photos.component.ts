@@ -31,6 +31,7 @@ export class PhotosComponent implements OnInit {
                 )
         });
     };
+    
     ngOnInit() {
     }
 
